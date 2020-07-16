@@ -4,7 +4,7 @@ from django.core.validators import MinLengthValidator
 
 class User(models.Model):
     name = models.CharField("Name", max_length=100)
-    email = models.CharField("E-mail", max_length=80)
+    email = models.CharField("E-mail", max_length=80, unique=True )
     password = models.CharField("Password", max_length=18, validators = [MinLengthValidator])
 
     def __str__(self):
