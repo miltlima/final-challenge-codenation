@@ -1,12 +1,12 @@
 from rest_framework.serializers import ModelSerializer
-from api.models import User
+from api.models import User, LogEntry
 
-class UserSerializer(serializer.ModelSerializer):
+class UserSerializer(ModelSerializer):
     class Meta:
         model = User
         fields = ('name', 'email')
 
-class LogEntrySerializer(serializers):
+class LogEntrySerializer(ModelSerializer):
     class Meta:
         model = LogEntry
-        fields = ('title', 'decription', 'createdAt', 'isArchived', 'colectedBy', 'category', 'level')
+        fields = ('title', 'description', 'createdAt', 'isArchived', 'colectedBy', 'category', 'level')
