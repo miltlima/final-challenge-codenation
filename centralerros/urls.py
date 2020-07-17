@@ -21,8 +21,8 @@ from api.viewsets import UserViewSet, LogEntryViewSet
 from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
-router.register(r'user', UserViewSet)
-router.register(r'logentry', LogEntryViewSet)
+router.register('user', UserViewSet)
+router.register('logentry', LogEntryViewSet, 'LogEntry')
 
 urlpatterns = [
     path('', include(router.urls)),

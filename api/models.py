@@ -15,7 +15,7 @@ class LogEntry(models.Model):
     description = models.CharField(max_length=200, blank="", null=False)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField
-    isArchived = models.BooleanField(default=False)
+    isArchived = models.BooleanField('Arquivado', default=False)
     colectedBy = models.ForeignKey(User, on_delete=models.CASCADE)
     CATEGORIES = [
             ('PROD','Produção'),
