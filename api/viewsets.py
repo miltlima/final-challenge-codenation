@@ -11,4 +11,4 @@ class UserViewSet(ModelViewSet):
 class LogEntryViewSet(ModelViewSet):
     serializer_class = LogEntrySerializer
     def get_queryset(self):
-        return LogEntry.objects.filter(isArchived=True)
+        return LogEntry.objects.filter(isArchived=False)
