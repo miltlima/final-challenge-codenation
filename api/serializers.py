@@ -9,4 +9,4 @@ class UserSerializer(ModelSerializer):
 class LogEntrySerializer(ModelSerializer):
     class Meta:
         model = LogEntry
-        fields = ('title', 'description', 'createdAt', 'isArchived', 'colectedBy', 'category', 'level')
+        fields = ('id', 'title', 'description', 'createdAt', 'isArchived', 'colectedBy', 'category', 'level')

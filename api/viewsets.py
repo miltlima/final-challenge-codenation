@@ -10,5 +10,24 @@ class UserViewSet(ModelViewSet):
 
 class LogEntryViewSet(ModelViewSet):
     serializer_class = LogEntrySerializer
+    
     def get_queryset(self):
         return LogEntry.objects.filter(isArchived=False)
+    
+    def list_queryset(self, request, *args, **kwargs):
+        return Response[{'teste':123}]
+    
+    def create(self, request, *args, **kwargs):
+        return Response({'Hello': request.data['nome']})
+
+    def destroy(self, request, *args, **kwargs):
+        pass
+
+    def retrieve(self, request, *args, **kwargs):
+        pass
+
+    def update(self, request, *args, **kwargs):
+        pass
+
+    def partial_update(self, request, *args, **kwargs):
+        pass
